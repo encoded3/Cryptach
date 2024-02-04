@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cryptach by encoded3</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <img src="static/logo.png">
+        <h1>Welcome to Cryptach!</h1>
+
+        <form enctype="multipart/form-data" method="get" action="{{ url_for('encrypt') }}">
+            <p>
+                <input type="checkbox" name="rename_variables" checked=true />
+                Rename variables
+            </p>
+            <p>
+                <input type="checkbox" name="extra_variables" checked=true />
+                Add extra variables, lists and broadcasts
+            </p>
+            <p>
+                <input type="checkbox" name="script_positions" checked=true />
+                Change script positions to random ones
+            </p>
+            <p>
+                <input type="checkbox" name="extra_blocks" checked=true />
+                Add extra blocks
+            </p>
+            <p>
+                Ignore sprites (separated by commas)
+                <input type="text" name="ignore_sprites", value="sprite1,sprite2" />
+            </p>
+            <p>
+                File path:
+                <input type="text" name="file"/>
+            </p>
+            <p>
+                <input type="submit" value="Send!" />
+            </p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'VT323';
+    font-weight: normal;
+    font-style: normal;
+    src: url("/static/fonts/vt323/VT323-Regular.ttf");
+  }
+
+html {
+    background-color: black;
+    color: white;
+    font-family: 'VT323';
+    font-size: large;
+}
