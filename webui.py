@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file
 from main import cryptach
+from easygui import fileopenbox
 
 app = Flask(__name__)
 
@@ -9,6 +10,10 @@ def index():
 
 @app.route('/encrypt', methods=['GET'])
 def encrypt():
+   args = request.args.to_dict()
+
+   args["file"] = fileopenbox("Choose file")
+
    cryptach(request.args.to_dict())
    return send_file("output.sb3")
 
