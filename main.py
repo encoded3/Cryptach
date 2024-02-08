@@ -45,7 +45,7 @@ def _crSprite(sprite: dict) -> dict:
             sprite["variables"][varname][0] = _encrypt(sprite["variables"][varname][0])
 
     if _checkValue("extra_variables"):
-        for i in range(256):
+        for i in range(64):
             sprite["variables"][_randomText(20)] = [
                 _encrypt(_randomText(5)),
                 _encrypt(_randomText(5))
@@ -65,7 +65,7 @@ def _crSprite(sprite: dict) -> dict:
             sprite["blocks"][i] = _crBlock(blocks[i])
 
     if sprite["blocks"] != {} and _checkValue("extra_blocks"):
-        for i in range(16):
+        for i in range(128):
             randIndex = random.choice(string.ascii_letters) + random.choice(string.ascii_letters)
 
             sprite["blocks"][_encrypt(randIndex)] = {
